@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="x-apple-disable-message-reformatting" /> 
+            <style> @font-face { font-family: ''Open Sans''; src: url(''./assets/font/Open_Sans/OpenSans-Regular.ttf''); } @font-face { font-family: ''Open Sans Bold''; src: url(''./assets/font/Open_Sans/OpenSans-Bold.ttf''); } @page { background-repeat: no-repeat; background-size: cover; /* margin: 0; size: A4 portrait; padding: 0; font-family: ''Open Sans''; */ } * { margin: 0; padding: 0; } body {} td { font-size: 20px; font-weight: 500; text-align: left; vertical-align: top; } a { font-size: 20px; font-weight: 300; }#icon { width: 100%; text-align: center; } #whiteBg { background-color: #FFFFFF; border-radius: 20px; padding: 7%; margin-top: -3%; } #octo { position: relative; top: 18px; } #transferSuccessful { font-size: 45px; } #transferHeader { font-size: 30px; } #greenLine { height: 5px; background-color: #0CBE68; margin-top: 3%; } #detail { margin: 5% 5% 0% 5%; } #footer { margin-top: 7%; text-align: center; font-size: 20px; }</style> 
+        </head> 
+        <body style="background-size: auto; font-family: ''Open Sans'', sans-serif; padding:0"> 
+            <div id="frame" style="height: auto; width: 1100px; background-size: 100%; margin: auto; position:relative; ">
+                <div style="padding: 5%; position: relative; padding-bottom: 100px;">
+                    <img src="https://branchlessbanking.cimbniaga.co.id/wp-content/uploads/2020/06/Background.png" style=" width: 1100px; position: absolute; z-index: -1; top: 0; bottom: 0; left: 0; right: 0; height: 100%;">
+                        <img src="https://branchlessbanking.cimbniaga.co.id/wp-content/uploads/2020/06/logo_octo_clicks.png" alt="Octo Clicks" width="25%">
+                            <div id="icon">
+                                <img src="https://branchlessbanking.cimbniaga.co.id/wp-content/uploads/2020/06/circle_octo.png" alt="Octo Logo" width="10%" id="octo">
+                                    <div id="whiteBg">
+                    <span id="transferSuccessful">Dear ${salutation} ${name},<br> thank you for using OCTO Clicks.</br></span>
+                    <span id="transferHeader"><br>Below is the summary of your OCTO Clicks scheduled transaction:</br></span>
+                    <div id="detail">
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 45%;">Date/Time</td>
+                                <td style="width: 3%; text-align: end;">:</td>
+                                <td>${date}</td>
+                            </tr>
+                            <tr>
+                                <td>Reference Number</td>
+                                <td style="text-align: end;">:</td>
+                                <td>${refNumberParam}</td>
+                            </tr>
+                            <tr>
+                                <td>Source of Fund Account</td>
+                                <td style="text-align: end;">:</td>
+                                <td>${srcFund}</td>
+                            </tr>
+                            <tr>
+                                <td>Transaction Type</td>
+                                <td style="text-align: end;">:</td>
+                                <td>Transfer to Own Account</td>
+                            </tr>
+                            <tr>
+                                <td>Destination Account</td>
+                                <td style="text-align: end;">:</td>
+                                <td>${beneficiaryAccNumber}</td>
+                            </tr>
+                            <tr>
+                                <td>Beneficiary Bank Name</td>
+                                <td style="text-align: end;">:</td>
+                                <td>CIMB Niaga</td>
+                            </tr>
+                            <tr>
+                                <td>Account Name</td>
+                                <td style="text-align: end;">:</td>
+                                <td>${beneficiaryName}</td>
+                            </tr>
+                             <tr>
+                                <td>Transfer Amount</td>
+                                <td style="text-align: end;">:</td>
+                                <td>${toCurrency} ${amount}</td>
+                            </tr>
+                            <tr>
+                                <td>Exchange Rate</td>
+                                <td style="text-align: end;">:</td>
+                                <td>${fromCurrency} ${xRate}</td>
+                            </tr>
+                            <tr>
+                                <td>Equivalent Amount</td>
+                                <td style="text-align: end;">:</td>
+                                <td>${currency} ${equivalentAmount}</td>
+                            </tr>
+                            <tr>
+                                <td>Message</td>
+                                <td style="text-align: end;">:</td>
+                                <td style="word-break: break-all;">${message}</td>
+                            </tr>
+                            <tr>
+                                <td>Purpose of Transaction</td>
+                                <td style="text-align: end;">:</td>
+                                <td>${purposeOfTransaction}</td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td style="text-align: end;">:</td>
+                                <td>SUCCESS</td>
+                            </tr>
+							<tr>
+                                <td>Schedule Details</td>
+                                <td style="text-align: end;">:</td>
+                                <td>${scheduledTrx}</td>
+                            </tr>
+							<tr>
+                                <td>Start Date and End Date</td>
+                                <td style="text-align: end;">:</td>
+                                <td>${recurringStart} - ${recurringEnd}</td>
+                            </tr>
+							<tr>
+                                <td>Next Transaction</td>
+                                <td style="text-align: end;">:</td>
+                                <td>${nextRunDate}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">&nbsp;</td>
+                            </tr>
+                            </tr>
+                                <td colspan="3">I hereby declare that my transactions will not exceed USD 100.000 within this month, and if it does I will provide the necessary documents.<br></td>
+                            </tr>
+                            </tr>
+                                <td colspan="3">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><center><a>We advise that you keep this email as a reference of your transaction.</a></center></td></td>
+                            </tr>
+                            <tr>
+                              <td colspan="3"><center><a>Important! Your User ID, Password and OTP are confidential. Don''t share it to anyone for any reason.</a></center></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><center><a>Thank you,</a></center></td></td>
+                            </tr>
+                            <tr>
+                              <td colspan="3"><center><a><b>Bank CIMB Niaga.</b></a></center></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+<img src="https://branchlessbanking.cimbniaga.co.id/wp-content/uploads/2020/06/banner.png" alt="banner" width="100%" style="margin-top: 10%;">
+                                            <div id="footer">This email is computer-generated. Should you need further assistance, please contact Phone Banking CIMB Niaga at 14041 or email us at 14041@cimbniaga.co.id.
+                                                <br>
+                                                    <br>PT Bank CIMB Niaga Tbk is registered and under supervision of Financial Service Authority (OJK). 
+							<br>OCTO Clicks Copyright &#169; 2020, All rights reserved.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </body>
+                                        </html>

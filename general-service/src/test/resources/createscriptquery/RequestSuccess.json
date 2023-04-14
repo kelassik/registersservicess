@@ -1,0 +1,46 @@
+{
+  "schemaName": "LIMIT_MANAGEMENT_SERVICE",
+  "tableName": "MASTER_TRANSFER_LIMIT",
+  "fieldTables": [
+    {
+      "filedName": "ID",
+      "typeData": "VARCHAR2",
+      "length": 50,
+      "secondLength": "BYTE",
+      "defaultValue": null,
+      "comment": "example : user_profile_id or rfp_id",
+      "nullable": false,
+      "primaryKey": true
+    },
+    {
+      "filedName": "TYPE",
+      "typeData": "VARCHAR2",
+      "length": 20,
+      "secondLength": "BYTE",
+      "defaultValue": null,
+      "comment": "example : \"User\" or \"Email\"",
+      "nullable": false,
+      "primaryKey": false
+    },
+    {
+      "filedName": "COUNTER",
+      "typeData": "NUMBER",
+      "length": 20,
+      "secondLength": "0",
+      "defaultValue": null,
+      "comment": null,
+      "nullable": false,
+      "primaryKey": false
+    },
+    {
+      "filedName": "REQUEST_DATE",
+      "typeData": "TIMESTAMP",
+      "length": 6,
+      "secondLength": null,
+      "defaultValue": null,
+      "comment": null,
+      "nullable": false,
+      "primaryKey": false
+    }
+  ]
+}

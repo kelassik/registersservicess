@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="console"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="com.digital.solution.generalservice.utils.logging.MaskingLog">
+            <!--            %black(%d{ISO8601}) [%X{X-B3-TraceId:-}] %highlight(%-5level) [%blue(%t)] %yellow(%C{1.}): %msg%n%throwable-->
+            <Pattern>%d{yyyy-MMM-dd  HH:mm:ss.SSS} %-5level [%thread] [app_name=GENERAL-SERVICE] [trace_id=%X{X-B3-TraceId}] %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <appender name="jsonOnConsole" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.contrib.json.classic.JsonLayout">
+            <jsonFormatter class="ch.qos.logback.contrib.jackson.JacksonJsonFormatter">
+                <prettyPrint>true</prettyPrint>
+            </jsonFormatter>
+            <timestampFormat>yyyy-MM-dd' 'HH:mm:ss.SSS</timestampFormat>
+        </layout>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="console" />
+    </root>
+
+    <logger name="org.springframework.ws.client.MessageTracing.sent" level="TRACE"/>
+    <logger name="org.springframework.ws.client.MessageTracing.received" level="TRACE"/>
+    <logger name="id.co.cimbniaga.clicks.api.esb.configuration.SOAPConnector" level="TRACE">
+        <appender-ref ref="console"/>
+    </logger>
+</configuration>
